@@ -1,2 +1,2 @@
-# patchmatch
-An extension of nmap-vulners to provide faster, more enhanced security updates over traditional processes.
+# vulners
+A friendly interface to nmap + vulners. Requires nmap-vulners package.
