@@ -1,5 +1,3 @@
-# python-nmap must be installed with pip and nmap, vulners must be installed + on PATH
-
 # Import nmap module
 try:
     import nmap
@@ -63,13 +61,16 @@ def show_vulnerabilities(nmScan):
 
 # Main function
 def main():
-    nmScan = initialize_nmap()
-    address = input("Enter the IP/domain to scan: ").replace(" ", "")
+    try:
+        nmScan = initialize_nmap()
+        address = input("Enter the IP/domain to scan: ").replace(" ", "")
 
-    scan_ip(nmScan, address)
-    show_vulnerabilities(nmScan)
+        scan_ip(nmScan, address)
+        show_vulnerabilities(nmScan)
 
-    input("\nPress Enter to continue...")
+        input("\nPress Enter to continue...")
+    except KeyboardInterrupt:
+        print("\nScan interrupted by user.")
 
 # Call main only if directly from Python interpreter
 if __name__ == "__main__":
